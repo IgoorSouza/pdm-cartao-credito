@@ -15,15 +15,15 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val titularInput = findViewById<EditText>(R.id.titular_input)
-        val numeroInput = findViewById<EditText>(R.id.numero_input)
-        val dataInput = findViewById<EditText>(R.id.data_input)
+        val holderInput = findViewById<EditText>(R.id.holder_input)
+        val cardNumberInput = findViewById<EditText>(R.id.card_number_input)
+        val dateInput = findViewById<EditText>(R.id.date_input)
         val cvvInput = findViewById<EditText>(R.id.cvv_input)
 
-        titularInput.addTextChangedListener(object : TextWatcher {
+        holderInput.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (s.toString().length < 3) {
-                    titularInput.error = "O nome do titular deve ter pelo menos 3 caracteres."
+                    holderInput.error = "O nome do titular deve ter pelo menos 3 caracteres."
                 }
             }
 
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        numeroInput.addTextChangedListener(object : TextWatcher {
+        cardNumberInput.addTextChangedListener(object : TextWatcher {
             private var isUpdating = false
 
             override fun afterTextChanged(s: Editable?) {
@@ -42,13 +42,13 @@ class MainActivity : AppCompatActivity() {
                 if (digits.length > 16) digits = digits.substring(0, 16)
 
                 val formatted = digits.chunked(4).joinToString(" ")
-                numeroInput.setText(formatted)
-                numeroInput.setSelection(formatted.length)
+                cardNumberInput.setText(formatted)
+                cardNumberInput.setSelection(formatted.length)
 
                 if (digits.length < 16) {
-                    numeroInput.error = "O número deve ter 16 dígitos."
+                    cardNumberInput.error = "O número deve ter 16 dígitos."
                 } else {
-                    numeroInput.error = null
+                    cardNumberInput.error = null
                 }
 
                 isUpdating = false
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        dataInput.addTextChangedListener(object : TextWatcher {
+        dateInput.addTextChangedListener(object : TextWatcher {
             private var isUpdating = false
 
             override fun afterTextChanged(s: Editable?) {
@@ -76,12 +76,12 @@ class MainActivity : AppCompatActivity() {
                 if (input.length >= 2) {
                     val month = input.substring(0, 2).toIntOrNull()
                     if (month == null || month < 1 || month > 12) {
-                        dataInput.error = "O mês deve ser um valor entre 1 e 12."
+                        dateInput.error = "O mês deve ser um valor entre 1 e 12."
                     }
                 }
 
-                dataInput.setText(input)
-                dataInput.setSelection(input.length)
+                dateInput.setText(input)
+                dateInput.setSelection(input.length)
                 isUpdating = false
             }
 

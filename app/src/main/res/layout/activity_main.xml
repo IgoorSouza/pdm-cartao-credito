@@ -9,146 +9,176 @@
     tools:context=".MainActivity">
 
     <View
-        android:id="@+id/view"
-        android:layout_width="340dp"
-        android:layout_height="242dp"
-        android:background="@drawable/credit_card"
+        android:id="@+id/front_view"
+        android:layout_width="320dp"
+        android:layout_height="200dp"
+        android:background="@drawable/credit_card_front"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <ImageView
-        android:id="@+id/icone_banco"
+        android:id="@+id/mastercard"
+        android:layout_width="79dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/front_view"
+        app:layout_constraintTop_toTopOf="@+id/front_view"
+        app:srcCompat="@mipmap/mastercard" />
+
+    <ImageView
+        android:id="@+id/chip"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:srcCompat="@mipmap/icone_banco" />
+        app:layout_constraintBottom_toBottomOf="@+id/front_view"
+        app:layout_constraintEnd_toEndOf="@+id/front_view"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toStartOf="@+id/front_view"
+        app:layout_constraintTop_toTopOf="@+id/front_view"
+        app:layout_constraintVertical_bias="0.433"
+        app:srcCompat="@mipmap/chip" />
 
-    <TextView
-        android:id="@+id/titular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Titular"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.097" />
+    <ImageView
+        android:id="@+id/nubank"
+        android:layout_width="47dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/front_view"
+        app:layout_constraintEnd_toEndOf="@+id/front_view"
+        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintStart_toStartOf="@+id/front_view"
+        app:layout_constraintTop_toTopOf="@+id/front_view"
+        app:layout_constraintVertical_bias="0.854"
+        app:srcCompat="@mipmap/nubank" />
 
     <EditText
-        android:id="@+id/titular_input"
-        android:background="@null"
-        android:layout_width="240dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:ems="10"
-        android:hint="Nome do titular"
+        android:id="@+id/holder_input"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@android:color/transparent"
+        android:hint="@string/holder_hint"
         android:inputType="text"
-        android:textColor="#FFFFFF"
-        android:textColorLink="#fff"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/titular" />
+        android:textColor="#FFF"
+        android:textColorLink="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/front_view"
+        app:layout_constraintEnd_toEndOf="@+id/front_view"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/nubank"
+        app:layout_constraintTop_toTopOf="@+id/front_view"
+        app:layout_constraintVertical_bias="0.803" />
+
+    <View
+        android:id="@+id/back_view"
+        android:layout_width="320dp"
+        android:layout_height="200dp"
+        android:background="@drawable/credit_card_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/front_view"
+        app:layout_constraintVertical_bias="0.25" />
 
     <TextView
-        android:id="@+id/numero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Número do Cartão"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.417" />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/issued_by"
+        android:textColor="#FFF"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@id/back_view"
+        app:layout_constraintTop_toTopOf="@id/back_view" />
 
     <EditText
-        android:id="@+id/numero_input"
-        android:layout_width="240dp"
-        android:layout_height="38dp"
+        android:id="@+id/card_number_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:background="@android:color/transparent"
+        android:hint="@string/card_number_hint"
+        android:inputType="number"
+        android:textColor="#FFF"
+        android:textColorLink="#fff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_view"
+        app:layout_constraintEnd_toEndOf="@+id/back_view"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="@+id/back_view" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date"
+        android:textColor="#FFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/back_view"
+        app:layout_constraintEnd_toEndOf="@+id/back_view"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="@+id/back_view"
+        app:layout_constraintTop_toTopOf="@+id/back_view"
+        app:layout_constraintVertical_bias="0.756" />
+
+    <EditText
+        android:id="@+id/date_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:background="@null"
-        android:ems="10"
-        android:hint="0000 0000 0000 0000"
+        android:background="@android:color/transparent"
+        android:hint="@string/date_hint"
         android:inputType="number"
-        android:textColor="#FFFFFF"
+        android:textColor="#FFF"
         android:textColorLink="#fff"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/numero" />
-
-    <TextView
-        android:id="@+id/data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mês/Ano"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.067"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.752" />
-
-    <EditText
-        android:id="@+id/data_input"
-        android:background="@null"
-        android:layout_width="60dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="18dp"
-        android:ems="10"
-        android:hint="01/01"
-        android:inputType="number"
-        android:textColor="#FFFFFF"
-        android:textColorLink="#fff"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/data"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_view"
+        app:layout_constraintStart_toStartOf="@+id/back_view"
+        app:layout_constraintTop_toBottomOf="@+id/date"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/cvv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CVV"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:text="@string/cvv"
+        android:textColor="#FFF"
+        android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.377"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.744" />
+        app:layout_constraintBottom_toBottomOf="@+id/back_view"
+        app:layout_constraintEnd_toEndOf="@+id/back_view"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toStartOf="@+id/back_view"
+        app:layout_constraintTop_toTopOf="@+id/back_view"
+        app:layout_constraintVertical_bias="0.756" />
 
     <EditText
         android:id="@+id/cvv_input"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="115dp"
-        android:background="@null"
-        android:ems="10"
-        android:hint="123"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:background="@android:color/transparent"
+        android:hint="@string/cvv_hint"
         android:inputType="number"
-        android:textColor="#FFFFFF"
+        android:textColor="#FFF"
         android:textColorLink="#fff"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/view"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/back_view"
         app:layout_constraintTop_toBottomOf="@+id/cvv" />
+
+    <ImageView
+        android:id="@+id/cirrus"
+        android:layout_width="79dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/back_view"
+        app:layout_constraintTop_toTopOf="@+id/back_view"
+        app:srcCompat="@mipmap/cirrus" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

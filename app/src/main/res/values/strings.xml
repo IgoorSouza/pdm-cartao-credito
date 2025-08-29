@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Cartão de Crédito</string>
+    <string name="holder_hint">Igor Souza de Castro</string>
+    <string name="issued_by">Issued by Nubank under License by Mastercard Internacional.</string>
+    <string name="card_number">Número do Cartão</string>
+    <string name="card_number_hint">0000 0000 0000 0000</string>
+    <string name="date">Mês/Ano</string>
+    <string name="date_hint">01/01</string>
+    <string name="cvv">CVV</string>
+    <string name="cvv_hint">123</string>
 </resources>
